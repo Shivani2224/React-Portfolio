@@ -1,44 +1,89 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 const projects = [
   {
-    title: "QR Code Generator",
-    description: "A simple app to generate QR codes from URLs using React.",
-    link: "https://github.com/shivani2224/qr-code-generator",
+    title: "React Tic-Tac-Toe",
+    description: `This Tic-Tac-Toe-React project demonstrates your ability to implement a simple but interactive game using React and state management. The game logic is based on a 3x3 grid, where users can play as "X" or "O" and track the result. Features like winning condition checks, reset functionality, and simple UI make it a fun and engaging project.`,
+    tech: ["React", "JavaScript", "CSS"],
+    live: "https://your-live-link.com",
+    code: "https://github.com/your-repo",
   },
   {
-    title: "Tic-Tac-Toe",
-    description:
-      "A Tic-Tac-Toe game that allows two players to compete, track moves, and edit player names. Built using React, JavaScript, HTML, and CSS, the app features a clean, responsive design for seamless play across devices. It provides instant feedback by detecting wins or draws, displaying the winner’s name, and supporting quick rematches.",
-    link: "https://github.com/Shivani2224/Tic-Tac-Toe-React",
+    title: "Portfolio Website",
+    description: "This site! Built with React and animated with Framer Motion.",
+    tech: ["React", "Framer Motion", "Tailwind"],
+    live: "#",
+    code: "https://github.com/Shivani2224/React-Portfolio",
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Projects = () => {
   return (
-    <section id="projects" className="py-16 bg-teal-100 px-4 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-teal-600">
+    <section id="projects" className="py-20 bg-white px-6">
+      <h2 className="text-3xl font-bold text-center mb-12 text-teal-600">
         Projects
       </h2>
-      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+      <motion.div
+        className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition duration-300 text-left"
+            className="border p-6 rounded-lg shadow hover:shadow-lg transition"
+            variants={cardVariants}
           >
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              {project.title}
-            </h3>
-            <p className="text-gray-600 mb-4">{project.description}</p>
-            <a
-              href={project.link}
-              target="_blank"
-              className="text-teal-600 font-medium hover:underline"
-            >
-              view on Github →
-            </a>
-          </div>
+            <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+            <p className="mb-3 text-sm text-gray-600">{project.description}</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tech.map((tech, i) => (
+                <span
+                  key={i}
+                  className="text-xs bg-indigo-100 text-teal-700 px-2 py-1 rounded"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-4">
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-600 hover:underline"
+              >
+                Live Demo
+              </a>
+              <a
+                href={project.code}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-600 hover:underline"
+              >
+                GitHub
+              </a>
+            </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

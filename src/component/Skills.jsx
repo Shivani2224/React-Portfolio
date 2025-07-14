@@ -1,65 +1,78 @@
 import React from "react";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaGitAlt,
+  FaFigma,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiVite,
+  SiTypescript,
+  SiJest,
+  SiWebpack,
+} from "react-icons/si";
+import { motion } from "framer-motion";
 
-const skillCategories = [
+const skills = [
   {
-    title: "Frontend",
-    skills: [
-      { name: "HTML5", icon: "fa-brands fa-html5" },
-      { name: "CSS3", icon: "fa-brands fa-css3-alt" },
-      { name: "JavaScript", icon: "fa-brands fa-js" },
-      { name: "React", icon: "fa-brands fa-react" },
-      { name: "Tailwind CSS", icon: "fa-solid fa-wind" },
-      { name: "Bootstrap", icon: "fa-brands fa-bootstrap" },
-      { name: "jQuery", icon: "fa-brands fa-jsfiddle" },
-      { name: "Responsive Design", icon: "fa-solid fa-mobile-screen-button" },
+    category: "Frontend",
+    items: [
+      { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
+      { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
+      { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
+      { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
+      { name: "React", icon: <FaReact className="text-cyan-500" /> },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="text-teal-400" />,
+      },
     ],
   },
   {
-    title: "Tools",
-    skills: [
-      { name: "Git", icon: "fa-brands fa-git-alt" },
-      { name: "GitHub", icon: "fa-brands fa-github" },
-      { name: "npm", icon: "fa-brands fa-npm" },
-      { name: "VS Code", icon: "fa-solid fa-code" },
-    ],
-  },
-  {
-    title: "Basics",
-    skills: [
-      { name: "TypeScript", icon: "fa-solid fa-code" },
-      { name: "Node.js", icon: "fa-brands fa-node" },
-      { name: "API Integration", icon: "fa-solid fa-plug" },
+    category: "Tools",
+    items: [
+      { name: "Vite", icon: <SiVite className="text-purple-500" /> },
+      { name: "Git", icon: <FaGitAlt className="text-red-600" /> },
     ],
   },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16 bg-white px-4 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-[oklch(70.4%_0.14_182.503)]">
-        My Skills
+    <section id="skills" className="py-20 px-6 bg-slate-50 text-gray-900">
+      <h2 className="text-3xl font-bold text-center text-indigo-700 mb-12">
+        Skills
       </h2>
-
-      <div className="max-w-5xl mx-auto space-y-12 px-4 sm:px-6 lg:px-8">
-  {skillCategories.map((category, catIdx) => (
-    <div key={catIdx}>
-      <h3 className="text-2xl font-semibold mb-6 text-teal-700">{category.title}</h3>
-      <div className="flex flex-wrap gap-6 justify-center">
-        {category.skills.map((skill, idx) => (
-          <div
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+        {skills.map((group, idx) => (
+          <motion.div
             key={idx}
-            className="bg-teal-100 text-gray-900 px-5 py-3 rounded-lg shadow-md hover:bg-teal-200 transition duration-300 ease-in-out font-semibold flex items-center gap-3 justify-center min-w-[140px]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: idx * 0.1 }}
+            viewport={{ once: true }}
           >
-            {skill.icon && <i className={`${skill.icon} text-xl`} aria-hidden="true"></i>}
-            <span>{skill.name}</span>
-          </div>
+            <h3 className="text-xl font-semibold mb-4 border-b pb-2">
+              {group.category}
+            </h3>
+            <ul className="grid grid-cols-2 gap-4">
+              {group.items.map((skill, i) => (
+                <li
+                  key={i}
+                  className="flex items-center gap-3 text-md hover:text-indigo-600 transition"
+                >
+                  <span className="text-3xl">{skill.icon}</span>
+                  {skill.name}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         ))}
       </div>
-    </div>
-  ))}
-</div>
-
-
     </section>
   );
 };

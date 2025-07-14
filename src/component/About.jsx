@@ -4,12 +4,12 @@ const About = () => {
   return (
     <div>
       <section
-        id="profile"
+        id="about"
         className="py-16 px-4 bg-gray-50 text-center"
         data-aos="fade-up"
       >
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[oklch(70.4%_0.14_182.503)]">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-teal-600">
             About Me
           </h2>
 
