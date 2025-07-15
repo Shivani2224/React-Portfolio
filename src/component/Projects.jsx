@@ -10,9 +10,10 @@ const projects = [
     code: "https://github.com/your-repo",
   },
   {
-    title: "Portfolio Website",
-    description: "This site! Built with React and animated with Framer Motion.",
-    tech: ["React", "Framer Motion", "Tailwind"],
+    title: "To Do list",
+    description:
+      "A user-friendly task management application designed to help you organize your daily activities. This project allows users to add, mark as completed, or delete tasks dynamically.",
+    tech: ["HTML", "CSS", "Javascript"],
     live: "#",
     code: "https://github.com/Shivani2224/React-Portfolio",
   },
