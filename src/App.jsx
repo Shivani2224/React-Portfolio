@@ -4,17 +4,19 @@ import Home from "./component/Home";
 import Skills from "./component/Skills";
 import Projects from "./component/Projects";
 import Contactus from "./component/Contactus";
-import About from "./component/About";
+import About from "./component/about";
+import Footer from "./component/Footer";
 
 const App = () => {
   return (
     <div>
       <Header />
       <Home />
-      <About/>
+      <About />
       <Skills />
       <Projects />
       <Contactus />
+      <Footer />
     </div>
   );
 };

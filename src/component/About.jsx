@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-const About = () => {
+export default function About() {
   return (
     <div>
       <section
@@ -15,8 +15,8 @@ const About = () => {
 
           <p className="text-lg text-gray-700 leading-relaxed">
             Hello! I'm{" "}
-            <span className="font-semibold text-teal-600">Shivani</span>, a
-            passionate Front-End Developer based in Ontario, Canada. I love
+            <span className="font-semibold text-teal-600">Shivani</span>, a I'm
+            a passionate Front-End Developer based in Ontario, Canada. I love
             turning ideas into interactive, user-friendly web experiences using
             technologies like{" "}
             <span className="font-medium text-teal-600">
@@ -28,8 +28,10 @@ const About = () => {
           <p className="text-lg text-gray-700 mt-4 leading-relaxed">
             With a background in healthcare and tech support, I bring strong
             attention to detail, problem-solving skills, and a love for clean,
-            responsive design. I'm currently open to new opportunities where I
-            can contribute and grow as a developer.
+            responsive design. I'm also passionate about UX design—crafting
+            intuitive user journeys and ensuring every interface is both
+            visually appealing and easy to navigate. I'm currently open to new
+            opportunities where I can contribute and grow as a developer.
           </p>
 
           <a
@@ -44,5 +46,3 @@ const About = () => {
     </div>
   );
 }
-
-export default About

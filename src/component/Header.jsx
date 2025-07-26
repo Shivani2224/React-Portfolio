@@ -12,7 +12,7 @@ const Header = () => {
     { name: "Contact", href: "#contact" },
   ];
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="sticky top-0 z-50shadow-md">
       <nav className="max-w-7xl mx-auto flex items-center justify-between p-4">
         <h1 className="text-2xl font-bold text-teal-600">Shivani</h1>
         <ul className="md:flex gap-6 text-base font-medium">
