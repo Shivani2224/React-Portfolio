@@ -14,7 +14,7 @@ const projects = [
     description:
       "A task management app that allows users to add, complete, and delete tasks dynamically. Clean interface, fast performance, and responsive design make it a practical productivity tool.",
     tech: ["HTML", "CSS", "JavaScript"],
-    live: "#",
+    live: "", // Empty means no live link
     code: "https://github.com/Shivani2224/React-Portfolio",
   },
 ];
@@ -55,26 +55,27 @@ const Projects = () => {
             <h3 className="text-xl font-semibold text-teal-700 mb-3">
               {project.title}
             </h3>
+
             <p className="text-sm text-gray-600 mb-4">{project.description}</p>
 
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tech.map((tech, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1  text-teal-700 text-xs rounded-full font-medium"
+                  className="px-3 py-1 border-teal-300 text-teal-700 text-xs rounded-full font-medium"
                 >
                   {tech}
                 </span>
               ))}
             </div>
 
-            <div className="flex gap-4">
-              {project.live !== "#" && (
+            <div className="flex flex-col sm:flex-row gap-4">
+              {project.live && (
                 <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition text-sm font-medium"
+                  className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition text-sm font-medium text-center"
                 >
                   Live Demo
                 </a>
@@ -83,7 +84,7 @@ const Projects = () => {
                 href={project.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition text-sm font-medium"
+                className="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition text-sm font-medium text-center"
               >
                 GitHub
               </a>
