@@ -4,17 +4,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "dev": "vite",
-    "lint": "eslint .",
-    "preview": "vite preview",
-      "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
-  },
+ "scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+  "dev": "vite",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "build": "vite build"
+},
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "framer-motion": "^12.23.5",
