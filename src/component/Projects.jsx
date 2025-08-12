@@ -10,7 +10,7 @@ const projects = [
     description:
       "This project showcases your ability to implement game logic using React. The user-friendly interface features a 3x3 grid where players alternate between X and O. Includes win condition checks, reset functionality, and smooth UI interactions.",
     tech: ["React", "JavaScript", "CSS"],
-    code: "https://github.com/your-repo",
+    code: "https://github.com/Shivani2224/Tic-Tac-Toe-React",
     image: ticTacToeImg,
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     description:
       "A task management app that allows users to add, complete, and delete tasks dynamically. Clean interface, fast performance, and responsive design make it a practical productivity tool.",
     tech: ["HTML", "CSS", "JavaScript"],
-    code: "https://github.com/Shivani2224/React-Portfolio",
+    code: "https://github.com/Shivani2224/To-Do-List",
     image: todoImg,
   },
   {
