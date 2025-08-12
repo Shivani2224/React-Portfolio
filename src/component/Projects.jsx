@@ -100,10 +100,7 @@ const Projects = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-          
-                <span className="bg-gray-100 text-gray-400 px-4 py-2 rounded text-sm font-medium text-center cursor-not-allowed">
-                  Coming Soon
-                </span>
+   
 
                 {project.code ? (
                   <a
