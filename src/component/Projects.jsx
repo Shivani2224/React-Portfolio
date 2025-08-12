@@ -1,7 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-// Import images from assets or public folder
 import ticTacToeImg from "../assets/Project/React-Tic-Tac-Toe.png";
 import todoImg from "../assets/Project/To-Do-List.png";
 import ecommerceImg from "../assets/Project/Riri.png";
@@ -68,7 +66,7 @@ const Projects = () => {
             whileHover={{ scale: 1.02, y: -5 }}
             transition={{ type: "spring", stiffness: 200 }}
           >
-            {/* Project Image */}
+
             {project.image && (
               <motion.img
                 src={project.image}
@@ -80,7 +78,7 @@ const Projects = () => {
               />
             )}
 
-            {/* Project Info */}
+       
             <div className="p-6">
               <h3 className="text-xl font-semibold text-teal-700 mb-3">
                 {project.title}
@@ -89,7 +87,7 @@ const Projects = () => {
                 {project.description}
               </p>
 
-              {/* Tech Badges */}
+         
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, i) => (
                   <span
@@ -101,9 +99,8 @@ const Projects = () => {
                 ))}
               </div>
 
-              {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                {/* Always show Coming Soon for Live Demo */}
+          
                 <span className="bg-gray-100 text-gray-400 px-4 py-2 rounded text-sm font-medium text-center cursor-not-allowed">
                   Coming Soon
                 </span>

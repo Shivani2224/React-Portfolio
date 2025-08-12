@@ -66,7 +66,7 @@ const Home = () => {
         </motion.svg>
       </motion.a>
 
-      {/* Social Media Icons */}
+ 
       <div className="flex gap-6 mb-6 text-2xl">
         <a
           href="https://github.com/shivani2224"
