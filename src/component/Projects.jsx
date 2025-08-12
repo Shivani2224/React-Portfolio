@@ -1,21 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Import images from assets or public folder
+import ticTacToeImg from "../assets/Project/React-Tic-Tac-Toe.png";
+import todoImg from "../assets/Project/To-Do-List.png";
+import ecommerceImg from "../assets/Project/Riri.png";
+
 const projects = [
   {
     title: "React Tic-Tac-Toe",
-    description: `This project showcases your ability to implement game logic using React. The user-friendly interface features a 3x3 grid where players alternate between "X" and "O". It includes win condition checks, reset functionality, and smooth UI interactions.`,
+    description:
+      "This project showcases your ability to implement game logic using React. The user-friendly interface features a 3x3 grid where players alternate between X and O. Includes win condition checks, reset functionality, and smooth UI interactions.",
     tech: ["React", "JavaScript", "CSS"],
-    live: "https://your-live-link.com",
     code: "https://github.com/your-repo",
+    image: ticTacToeImg,
   },
   {
     title: "To-Do List",
     description:
       "A task management app that allows users to add, complete, and delete tasks dynamically. Clean interface, fast performance, and responsive design make it a practical productivity tool.",
     tech: ["HTML", "CSS", "JavaScript"],
-    live: "", // Empty means no live link
     code: "https://github.com/Shivani2224/React-Portfolio",
+    image: todoImg,
+  },
+  {
+    title: "E-commerce",
+    description:
+      "An e-commerce website for selling stickers and customizable t-shirts. Includes product filtering, shopping cart, secure checkout, and a responsive design for seamless browsing.",
+    tech: ["React", "TailwindCSS", "JavaScript"],
+    code: "",
+    image: ecommerceImg,
   },
 ];
 
@@ -49,45 +63,66 @@ const Projects = () => {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-white border rounded-xl p-6 shadow-md hover:shadow-2xl hover:-translate-y-1 transition duration-300 text-left"
+            className="bg-white border rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300"
             variants={cardVariants}
+            whileHover={{ scale: 1.02, y: -5 }}
+            transition={{ type: "spring", stiffness: 200 }}
           >
-            <h3 className="text-xl font-semibold text-teal-700 mb-3">
-              {project.title}
-            </h3>
+            {/* Project Image */}
+            {project.image && (
+              <motion.img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              />
+            )}
 
-            <p className="text-sm text-gray-600 mb-4">{project.description}</p>
+            {/* Project Info */}
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-teal-700 mb-3">
+                {project.title}
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                {project.description}
+              </p>
 
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tech.map((tech, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 border-teal-300 text-teal-700 text-xs rounded-full font-medium"
-                >
-                  {tech}
+              {/* Tech Badges */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-teal-50 border border-teal-200 text-teal-700 text-xs rounded-full font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                {/* Always show Coming Soon for Live Demo */}
+                <span className="bg-gray-100 text-gray-400 px-4 py-2 rounded text-sm font-medium text-center cursor-not-allowed">
+                  Coming Soon
                 </span>
-              ))}
-            </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              {project.live && (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition text-sm font-medium text-center"
-                >
-                  Live Demo
-                </a>
-              )}
-              <a
-                href={project.code}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition text-sm font-medium text-center"
-              >
-                GitHub
-              </a>
+                {project.code ? (
+                  <a
+                    href={project.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition text-sm font-medium text-center"
+                  >
+                    GitHub
+                  </a>
+                ) : (
+                  <span className="bg-gray-100 text-gray-400 px-4 py-2 rounded text-sm font-medium text-center cursor-not-allowed">
+                    Private
+                  </span>
+                )}
+              </div>
             </div>
           </motion.div>
         ))}

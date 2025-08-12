@@ -28,7 +28,7 @@ const Home = () => {
         />
       </svg>
 
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 text-teal-900 drop-shadow-md">
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 text-teal-900 drop-shadow-md justify-items-start">
         Hi, I'm Shivani
       </h1>
 
