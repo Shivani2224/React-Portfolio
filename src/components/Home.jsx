@@ -12,11 +12,20 @@ const Home = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-teal relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center bg-gradient-teal relative overflow-hidden"
+    >
       <div className="absolute w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute w-[300px] h-[300px] bg-white opacity-10 rounded-full top-[10%] left-[10%] animate-float"></div>
-        <div className="absolute w-[200px] h-[200px] bg-white opacity-10 rounded-full top-[60%] right-[10%] animate-float" style={{ animationDelay: '5s' }}></div>
-        <div className="absolute w-[400px] h-[400px] bg-white opacity-10 rounded-full bottom-[-10%] left-[50%] animate-float" style={{ animationDelay: '10s' }}></div>
+        <div
+          className="absolute w-[200px] h-[200px] bg-white opacity-10 rounded-full top-[60%] right-[10%] animate-float"
+          style={{ animationDelay: "5s" }}
+        ></div>
+        <div
+          className="absolute w-[400px] h-[400px] bg-white opacity-10 rounded-full bottom-[-10%] left-[50%] animate-float"
+          style={{ animationDelay: "10s" }}
+        ></div>
       </div>
 
       <div className="w-full px-8 relative z-10 flex justify-center items-center min-h-[80vh]">
@@ -32,7 +41,8 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Hi, I'm <span className="text-primary-dark font-black">Shivani</span>
+            Hi, I'm{" "}
+            <span className="text-primary-dark font-black">Shivani</span>
           </motion.h1>
 
           <motion.p
@@ -82,7 +92,7 @@ const Home = () => {
             className="flex gap-6 justify-center mt-12"
           >
             <motion.a
-              href="https://github.com"
+              href="https://github.com/Shivani2224"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -5, scale: 1.1 }}
@@ -91,7 +101,7 @@ const Home = () => {
               <FaGithub />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="www.linkedin.com/in/shivani-patel-aa2846178"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -5, scale: 1.1 }}
@@ -100,7 +110,7 @@ const Home = () => {
               <FaLinkedin />
             </motion.a>
             <motion.a
-              href="mailto:harshhvani13108@gmail.com"
+              href="mailto:patelshivani1410@gmail.com"
               whileHover={{ y: -5, scale: 1.1 }}
               className="w-12 h-12 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-full text-white text-xl transition-all duration-300 hover:bg-white hover:text-primary no-underline"
             >
