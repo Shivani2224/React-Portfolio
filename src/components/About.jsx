@@ -76,14 +76,14 @@ const About = () => {
                 </li>
               </ul>
             </div>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-8 px-8 py-3 text-base bg-primary text-white border-none rounded-full cursor-pointer transition-all duration-300 hover:bg-primary-dark hover:-translate-y-0.5 hover:shadow-lg inline-flex items-center"
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all duration-300"
             >
               Download Resume
-            </motion.button>
+            </a>
           </motion.div>
         </div>
       </div>
