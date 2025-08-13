@@ -32,85 +32,34 @@ const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      style={{
-        padding: "80px 0",
-        backgroundColor: "#f0fdfa",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "0 20px",
-        }}
-      >
+    <section id="contact" className="py-20 bg-teal-50">
+      <div className="max-w-6xl mx-auto px-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2
-            style={{
-              fontSize: "2.5rem",
-              textAlign: "center",
-              marginBottom: "20px",
-              color: "#0f766e",
-              fontWeight: "bold",
-            }}
-          >
+          <h2 className="text-4xl md:text-5xl text-center mb-5 text-primary-dark font-bold">
             Get In Touch
           </h2>
-          <p
-            style={{
-              textAlign: "center",
-              color: "#475569",
-              marginBottom: "48px",
-              fontSize: "1.125rem",
-              maxWidth: "600px",
-              margin: "0 auto 48px",
-            }}
-          >
+          <p className="text-center text-slate-600 mb-12 text-lg max-w-2xl mx-auto">
             Have a project in mind or want to discuss opportunities? I'd love to
             hear from you!
           </p>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns:
-                window.innerWidth >= 1024 ? "1fr 1fr" : "1fr",
-              gap: "48px",
-              maxWidth: "1000px",
-              margin: "0 auto",
-            }}
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <div style={{ marginBottom: "32px" }}>
-                <h3
-                  style={{
-                    fontSize: "1.5rem",
-                    fontWeight: "bold",
-                    marginBottom: "16px",
-                    color: "#0f766e",
-                  }}
-                >
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary-dark">
                   Let's Connect
                 </h3>
-                <p
-                  style={{
-                    color: "#475569",
-                    marginBottom: "24px",
-                    lineHeight: "1.6",
-                  }}
-                >
+                <p className="text-slate-600 mb-6 leading-relaxed">
                   I'm always excited to work on new projects and collaborate
                   with passionate individuals and teams. Whether you have a
                   specific project in mind or just want to explore
@@ -118,162 +67,54 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div style={{ marginBottom: "32px" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    marginBottom: "20px",
-                    padding: "16px",
-                    background: "white",
-                    borderRadius: "8px",
-                    boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
-                  }}
-                >
-                  <FaEnvelope
-                    style={{
-                      color: "#0d9488",
-                      fontSize: "1.5rem",
-                      marginRight: "16px",
-                      marginTop: "4px",
-                    }}
-                  />
+              <div className="space-y-5 mb-8">
+                <div className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                  <FaEnvelope className="text-primary text-2xl mr-4 mt-1 flex-shrink-0" />
                   <div>
-                    <h4
-                      style={{
-                        fontWeight: "600",
-                        color: "#0f766e",
-                        marginBottom: "4px",
-                      }}
-                    >
+                    <h4 className="font-semibold text-primary-dark mb-1">
                       Email
                     </h4>
                     <a
-                      href="mailto:harshhvani13108@gmail.com"
-                      style={{
-                        color: "#0d9488",
-                        textDecoration: "none",
-                      }}
-                      onMouseEnter={(e) =>
-                        (e.target.style.textDecoration = "underline")
-                      }
-                      onMouseLeave={(e) =>
-                        (e.target.style.textDecoration = "none")
-                      }
+                      href="mailto:patelshivani1410@gmail.com"
+                      className="text-primary hover:underline transition-all"
                     >
                       patelshivani1410@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    marginBottom: "20px",
-                    padding: "16px",
-                    background: "white",
-                    borderRadius: "8px",
-                    boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
-                  }}
-                >
-                  <FaMapMarkerAlt
-                    style={{
-                      color: "#0d9488",
-                      fontSize: "1.5rem",
-                      marginRight: "16px",
-                      marginTop: "4px",
-                    }}
-                  />
+                <div className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                  <FaMapMarkerAlt className="text-primary text-2xl mr-4 mt-1 flex-shrink-0" />
                   <div>
-                    <h4
-                      style={{
-                        fontWeight: "600",
-                        color: "#0f766e",
-                        marginBottom: "4px",
-                      }}
-                    >
+                    <h4 className="font-semibold text-primary-dark mb-1">
                       Location
                     </h4>
-                    <p style={{ color: "#475569" }}>Ontario, Canada</p>
+                    <p className="text-slate-600">Ontario, Canada</p>
                   </div>
                 </div>
 
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    marginBottom: "20px",
-                    padding: "16px",
-                    background: "white",
-                    borderRadius: "8px",
-                    boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
-                  }}
-                >
-                  <FaPhone
-                    style={{
-                      color: "#0d9488",
-                      fontSize: "1.5rem",
-                      marginRight: "16px",
-                      marginTop: "4px",
-                    }}
-                  />
+                <div className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                  <FaPhone className="text-primary text-2xl mr-4 mt-1 flex-shrink-0" />
                   <div>
-                    <h4
-                      style={{
-                        fontWeight: "600",
-                        color: "#0f766e",
-                        marginBottom: "4px",
-                      }}
-                    >
+                    <h4 className="font-semibold text-primary-dark mb-1">
                       Availability
                     </h4>
-                    <p style={{ color: "#475569" }}>Mon-Fri, 9 AM - 6 PM EST</p>
+                    <p className="text-slate-600">Mon-Fri, 9 AM - 6 PM EST</p>
                   </div>
                 </div>
               </div>
 
-              <div style={{ textAlign: "center" }}>
-                <h4
-                  style={{
-                    fontWeight: "600",
-                    marginBottom: "12px",
-                    color: "#0f766e",
-                  }}
-                >
+              <div className="text-center">
+                <h4 className="font-semibold mb-3 text-primary-dark">
                   Follow Me
                 </h4>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "16px",
-                    justifyContent: "center",
-                  }}
-                >
+                <div className="flex gap-4 justify-center">
                   <motion.a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -5, scale: 1.1 }}
-                    style={{
-                      width: "44px",
-                      height: "44px",
-                      borderRadius: "50%",
-                      background: "#0d9488",
-                      color: "white",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "1.25rem",
-                      textDecoration: "none",
-                      transition: "all 0.3s ease",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.background = "#0f766e")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.background = "#0d9488")
-                    }
+                    className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center text-xl no-underline transition-all duration-300 hover:bg-primary-dark"
                   >
                     <FaLinkedin />
                   </motion.a>
@@ -282,25 +123,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -5, scale: 1.1 }}
-                    style={{
-                      width: "44px",
-                      height: "44px",
-                      borderRadius: "50%",
-                      background: "#0d9488",
-                      color: "white",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "1.25rem",
-                      textDecoration: "none",
-                      transition: "all 0.3s ease",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.background = "#0f766e")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.background = "#0d9488")
-                    }
+                    className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center text-xl no-underline transition-all duration-300 hover:bg-primary-dark"
                   >
                     <FaGithub />
                   </motion.a>
@@ -309,25 +132,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -5, scale: 1.1 }}
-                    style={{
-                      width: "44px",
-                      height: "44px",
-                      borderRadius: "50%",
-                      background: "#0d9488",
-                      color: "white",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "1.25rem",
-                      textDecoration: "none",
-                      transition: "all 0.3s ease",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.background = "#0f766e")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.background = "#0d9488")
-                    }
+                    className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center text-xl no-underline transition-all duration-300 hover:bg-primary-dark"
                   >
                     <FaTwitter />
                   </motion.a>
@@ -343,33 +148,13 @@ const Contact = () => {
             >
               <form
                 onSubmit={handleSubmit}
-                style={{
-                  background: "white",
-                  padding: "32px",
-                  borderRadius: "12px",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-                }}
+                className="bg-white p-8 rounded-xl shadow-lg"
               >
-                <h3
-                  style={{
-                    fontSize: "1.5rem",
-                    fontWeight: "bold",
-                    marginBottom: "24px",
-                    color: "#0f766e",
-                  }}
-                >
+                <h3 className="text-2xl font-bold mb-6 text-primary-dark">
                   Send Message
                 </h3>
 
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns:
-                      window.innerWidth >= 768 ? "1fr 1fr" : "1fr",
-                    gap: "16px",
-                    marginBottom: "16px",
-                  }}
-                >
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <input
                     type="text"
                     name="name"
@@ -377,16 +162,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    style={{
-                      padding: "12px 16px",
-                      border: "2px solid #e5e7eb",
-                      borderRadius: "8px",
-                      fontSize: "1rem",
-                      outline: "none",
-                      transition: "border-color 0.3s ease",
-                    }}
-                    onFocus={(e) => (e.target.style.borderColor = "#0d9488")}
-                    onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
+                    className="p-3 border-2 border-gray-200 rounded-lg text-base outline-none transition-colors focus:border-primary"
                   />
                   <input
                     type="email"
@@ -395,16 +171,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    style={{
-                      padding: "12px 16px",
-                      border: "2px solid #e5e7eb",
-                      borderRadius: "8px",
-                      fontSize: "1rem",
-                      outline: "none",
-                      transition: "border-color 0.3s ease",
-                    }}
-                    onFocus={(e) => (e.target.style.borderColor = "#0d9488")}
-                    onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
+                    className="p-3 border-2 border-gray-200 rounded-lg text-base outline-none transition-colors focus:border-primary"
                   />
                 </div>
 
@@ -415,18 +182,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  style={{
-                    width: "100%",
-                    padding: "12px 16px",
-                    border: "2px solid #e5e7eb",
-                    borderRadius: "8px",
-                    fontSize: "1rem",
-                    outline: "none",
-                    transition: "border-color 0.3s ease",
-                    marginBottom: "16px",
-                  }}
-                  onFocus={(e) => (e.target.style.borderColor = "#0d9488")}
-                  onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
+                  className="w-full p-3 border-2 border-gray-200 rounded-lg text-base outline-none transition-colors focus:border-primary mb-4"
                 />
 
                 <textarea
@@ -436,47 +192,17 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  style={{
-                    width: "100%",
-                    padding: "12px 16px",
-                    border: "2px solid #e5e7eb",
-                    borderRadius: "8px",
-                    fontSize: "1rem",
-                    outline: "none",
-                    transition: "border-color 0.3s ease",
-                    marginBottom: "24px",
-                    resize: "vertical",
-                    minHeight: "150px",
-                  }}
-                  onFocus={(e) => (e.target.style.borderColor = "#0d9488")}
-                  onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
+                  className="w-full p-3 border-2 border-gray-200 rounded-lg text-base outline-none transition-colors focus:border-primary mb-6 resize-vertical min-h-[150px]"
                 />
 
                 <motion.button
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  style={{
-                    width: "100%",
-                    padding: "14px 24px",
-                    background: "#0d9488",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "8px",
-                    fontSize: "1.1rem",
-                    fontWeight: "600",
-                    cursor: "pointer",
-                    transition: "background-color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.target.style.backgroundColor = "#0f766e")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.target.style.backgroundColor = "#0d9488")
-                  }
+                  className="w-full py-4 px-6 bg-primary text-white border-none rounded-lg text-lg font-semibold cursor-pointer transition-all duration-300 hover:bg-primary-dark"
                 >
                   Send Message
-                  <span style={{ marginLeft: "8px" }}>→</span>
+                  <span className="ml-2">→</span>
                 </motion.button>
               </form>
             </motion.div>

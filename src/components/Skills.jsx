@@ -83,34 +83,18 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" style={{
-      padding: '80px 0',
-      backgroundColor: '#f0fdfa'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '0 20px'
-      }}>
+    <section id="skills" className="py-20 bg-teal-50">
+      <div className="max-w-6xl mx-auto px-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 style={{
-            fontSize: '2.5rem',
-            textAlign: 'center',
-            marginBottom: '20px',
-            color: '#0f766e',
-            fontWeight: 'bold'
-          }}>Skills & Tools</h2>
-          <p style={{
-            textAlign: 'center',
-            color: '#475569',
-            marginBottom: '48px',
-            fontSize: '1.125rem'
-          }}>
+          <h2 className="text-4xl md:text-5xl text-center mb-5 text-primary-dark font-bold">
+            Skills & Tools
+          </h2>
+          <p className="text-center text-slate-600 mb-12 text-lg">
             Technologies I work with to bring ideas to life
           </p>
 
@@ -119,12 +103,7 @@ const Skills = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gridTemplateRows: 'repeat(3, 1fr)',
-              gap: '24px'
-            }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {skills.map((skill, index) => (
               <motion.div
@@ -135,53 +114,24 @@ const Skills = () => {
                   scale: 1.05,
                   transition: { duration: 0.3 }
                 }}
-                style={{
-                  background: 'white',
-                  borderRadius: '12px',
-                  padding: '28px 20px',
-                  textAlign: 'center',
-                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                  border: '2px solid transparent',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.border = '2px solid #0d9488';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(13, 148, 136, 0.15)';
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.border = '2px solid transparent';
-                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
-                  e.currentTarget.style.background = 'white';
-                }}
+                className="bg-white rounded-xl p-7 text-center shadow-sm border-2 border-transparent cursor-pointer transition-all duration-300 relative overflow-hidden hover:border-primary hover:shadow-xl hover:bg-gradient-to-br hover:from-white hover:to-teal-50"
               >
                 <motion.div
                   whileHover={{ 
                     rotate: [0, -10, 10, -10, 0],
                     transition: { duration: 0.5 }
                   }}
-                  style={{
-                    fontSize: '3rem',
-                    marginBottom: '12px',
-                    color: skill.color,
-                    filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))'
-                  }}
+                  className="text-5xl mb-3 drop-shadow-md"
+                  style={{ color: skill.color }}
                 >
                   {skill.icon}
                 </motion.div>
-                <h3 style={{
-                  fontWeight: '600',
-                  color: '#0f766e',
-                  marginBottom: '4px',
-                  fontSize: '1.125rem'
-                }}>{skill.name}</h3>
-                <p style={{
-                  fontSize: '0.875rem',
-                  color: '#64748b'
-                }}>{skill.description}</p>
+                <h3 className="font-semibold text-primary-dark mb-1 text-lg">
+                  {skill.name}
+                </h3>
+                <p className="text-sm text-slate-500">
+                  {skill.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>

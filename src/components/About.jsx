@@ -1,98 +1,49 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section
-      id="about"
-      style={{
-        padding: "80px 0",
-        backgroundColor: "#f0fdfa",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "0 20px",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: "2.5rem",
-            textAlign: "center",
-            marginBottom: "20px",
-            color: "#0f766e",
-          }}
+    <section id="about" className="py-20 bg-teal-50">
+      <div className="max-w-6xl mx-auto px-5">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-5xl font-bold text-center mb-5 bg-gradient-teal bg-clip-text text-transparent"
         >
           About Me
-        </h2>
+        </motion.h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: window.innerWidth > 768 ? "1fr 2fr" : "1fr",
-            gap: "40px",
-            alignItems: "center",
-            marginTop: "40px",
-          }}
-        >
-          <div
-            style={{
-              textAlign: "center",
-            }}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center mt-10">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-center"
           >
-            <div
-              style={{
-                width: "250px",
-                height: "250px",
-                borderRadius: "50%",
-                background: "linear-gradient(135deg, #14b8a6 0%, #0d9488 100%)",
-                margin: "0 auto",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "white",
-                fontSize: "3rem",
-                fontWeight: "bold",
-              }}
-            >
+            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary-light to-primary mx-auto flex items-center justify-center text-white text-5xl font-bold">
               SP
             </div>
-          </div>
+          </motion.div>
 
-          <div>
-            <h3
-              style={{
-                fontSize: "1.8rem",
-                marginBottom: "20px",
-                color: "#0f766e",
-              }}
-            >
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="md:col-span-2"
+          >
+            <h3 className="text-3xl mb-5 text-primary-dark">
               Hello! I'm Shivani
             </h3>
 
-            <p
-              style={{
-                fontSize: "1.1rem",
-                lineHeight: "1.8",
-                color: "#475569",
-                marginBottom: "20px",
-              }}
-            >
+            <p className="text-lg leading-relaxed text-slate-600 mb-5">
               I'm a passionate Front-End Developer and UX/UI enthusiast based in
               Ontario, Canada. I enjoy turning creative ideas into interactive,
               user-friendly experiences using HTML, CSS, JavaScript, React, and
               Tailwind CSS.
             </p>
 
-            <p
-              style={{
-                fontSize: "1.1rem",
-                lineHeight: "1.8",
-                color: "#475569",
-                marginBottom: "20px",
-              }}
-            >
+            <p className="text-lg leading-relaxed text-slate-600 mb-5">
               With a background in healthcare and tech support, I bring a unique
               blend of problem-solving, precision, and empathy into every
               project I work on. I love crafting clean, responsive interfaces
@@ -100,96 +51,40 @@ const About = () => {
               functionality and aesthetics.
             </p>
 
-            <p
-              style={{
-                fontSize: "1.1rem",
-                lineHeight: "1.8",
-                color: "#475569",
-                marginBottom: "20px",
-              }}
-            >
+            <p className="text-lg leading-relaxed text-slate-600 mb-5">
               I'm always excited to take on new challenges and opportunities to
               learn, grow, and contribute meaningfully as a developer.
             </p>
 
-            <div
-              style={{
-                marginTop: "30px",
-              }}
-            >
-              <h4
-                style={{
-                  fontSize: "1.3rem",
-                  marginBottom: "15px",
-                  color: "#0f766e",
-                }}
-              >
+            <div className="mt-8">
+              <h4 className="text-xl mb-4 text-primary-dark font-semibold">
                 Quick Facts:
               </h4>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                }}
-              >
-                <li
-                  style={{
-                    marginBottom: "10px",
-                    fontSize: "1rem",
-                    color: "#475569",
-                  }}
-                >
+              <ul className="list-none p-0 space-y-3">
+                <li className="text-base text-slate-600">
                   📍 Location: Ontario, Canada
                 </li>
-                <li
-                  style={{
-                    marginBottom: "10px",
-                    fontSize: "1rem",
-                    color: "#475569",
-                  }}
-                >
+                <li className="text-base text-slate-600">
                   🎓 Education: BCA (Bachelor of Computer Applications)
                 </li>
-                <li
-                  style={{
-                    marginBottom: "10px",
-                    fontSize: "1rem",
-                    color: "#475569",
-                  }}
-                >
+                <li className="text-base text-slate-600">
                   💼 Background: Healthcare & Tech Support
                 </li>
-                <li
-                  style={{
-                    marginBottom: "10px",
-                    fontSize: "1rem",
-                    color: "#475569",
-                  }}
-                >
+                <li className="text-base text-slate-600">
                   ⚡ Passion: Always excited to learn, grow, and contribute
                   meaningfully
                 </li>
               </ul>
             </div>
 
-            <button
-              style={{
-                marginTop: "30px",
-                padding: "12px 30px",
-                fontSize: "1rem",
-                backgroundColor: "#0d9488",
-                color: "white",
-                border: "none",
-                borderRadius: "5px",
-                cursor: "pointer",
-                transition: "background-color 0.3s",
-              }}
-              onMouseOver={(e) => (e.target.style.backgroundColor = "#0f766e")}
-              onMouseOut={(e) => (e.target.style.backgroundColor = "#0d9488")}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-8 px-8 py-3 text-base bg-primary text-white border-none rounded-full cursor-pointer transition-all duration-300 hover:bg-primary-dark hover:-translate-y-0.5 hover:shadow-lg inline-flex items-center"
             >
               Download Resume
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </div>
     </section>
