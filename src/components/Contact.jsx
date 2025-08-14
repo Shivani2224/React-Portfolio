@@ -8,6 +8,8 @@ import {
   FaGithub,
   FaTwitter,
 } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,12 +26,37 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! I will get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const submitButton = e.target.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending...";
+  emailjs
+    .send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    )
+    .then(() => {
+      alert("Thank you! Your message has been sent.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      submitButton.disabled = false;
+      submitButton.innerHTML = 'Send Message <span class="ml-2">→</span>';
+    })
+    .catch((error) => {
+      alert("Failed to send message. Please try again.");
+      console.error("EmailJS error:", error);
+      submitButton.disabled = false;
+      submitButton.innerHTML = 'Send Message <span class="ml-2">→</span>';
+    });
+};
 
   return (
     <section id="contact" className="py-20 bg-teal-50">

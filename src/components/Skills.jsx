@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   FaHtml5, FaCss3Alt, FaJs, FaReact, 
-  FaGitAlt, FaFigma, FaNodeJs, FaNpm 
+  FaGitAlt, FaFigma, FaNodeJs
 } from 'react-icons/fa';
 import { 
-  SiTypescript, SiTailwindcss, SiNextdotjs, 
-  SiRedux, SiMongodb, SiExpress 
+  SiTypescript, SiTailwindcss
 } from 'react-icons/si';
+
 
 const Skills = () => {
   const skills = [
