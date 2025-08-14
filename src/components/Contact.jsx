@@ -33,8 +33,8 @@ const handleSubmit = (e) => {
   submitButton.textContent = "Sending...";
   emailjs
     .send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      'service_sc18r7t',
+      'template_025gpql',
 
       {
         from_name: formData.name,
@@ -42,7 +42,7 @@ const handleSubmit = (e) => {
         subject: formData.subject,
         message: formData.message,
       },
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      'GjjHAOy4gaDCieGl1'
     )
     .then(() => {
       alert("Thank you! Your message has been sent.");
